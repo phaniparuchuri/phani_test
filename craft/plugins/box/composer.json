@@ -1,0 +1,14 @@
+{
+    "require": {
+        "pimkaptein/box-sdk": "dev-master",
+		"adammbalogh/key-value-store-file": "0.5.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "AdammBalogh":        "src/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}

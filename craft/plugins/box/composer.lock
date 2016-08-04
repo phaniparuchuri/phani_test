@@ -1,0 +1,348 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "c63f81b91d1ded63d5ef9a6240fdd407",
+    "packages": [
+        {
+            "name": "adammbalogh/key-value-store",
+            "version": "0.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adammbalogh/key-value-store.git",
+                "reference": "92f1f5b051c5809a87a3cee62c7627043f101efd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adammbalogh/key-value-store/zipball/92f1f5b051c5809a87a3cee62c7627043f101efd",
+                "reference": "92f1f5b051c5809a87a3cee62c7627043f101efd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpmd/phpmd": "~2.1",
+                "phpunit/phpunit": "~4.2.5",
+                "satooshi/php-coveralls": "dev-master",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "suggest": {
+                "adammbalogh/key-value-store-file": "For using File storage",
+                "adammbalogh/key-value-store-memcached": "For using Memcached storage",
+                "adammbalogh/key-value-store-memory": "For using Memory storage",
+                "adammbalogh/key-value-store-null": "For using Null storage",
+                "adammbalogh/key-value-store-redis": "For using Redis storage",
+                "adammbalogh/key-value-store-replicator": "For using Replicator adapter",
+                "adammbalogh/key-value-store-shared-memory": "For using Shared Memory storage"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AdammBalogh\\KeyValueStore\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Balogh",
+                    "email": "baloghbh@gmail.com",
+                    "homepage": "http://code-chronicle.blogspot.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Key-value store generic package. It contains abstractions.",
+            "keywords": [
+                "key",
+                "key-value",
+                "nosql",
+                "store",
+                "value"
+            ],
+            "time": "2014-10-22 15:44:11"
+        },
+        {
+            "name": "adammbalogh/key-value-store-file",
+            "version": "0.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adammbalogh/key-value-store-file.git",
+                "reference": "f9a3f6d1ac3470451ff59f09b2c739752b5354b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adammbalogh/key-value-store-file/zipball/f9a3f6d1ac3470451ff59f09b2c739752b5354b0",
+                "reference": "f9a3f6d1ac3470451ff59f09b2c739752b5354b0",
+                "shasum": ""
+            },
+            "require": {
+                "adammbalogh/key-value-store": "~0.5.1",
+                "fire015/flintstone": "~1.6.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1.4",
+                "phpunit/phpunit": "~4.2.5",
+                "satooshi/php-coveralls": "dev-master",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AdammBalogh\\KeyValueStore\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Balogh",
+                    "email": "baloghbh@gmail.com",
+                    "homepage": "http://code-chronicle.blogspot.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Key-value file store through fire015/flintstone package.",
+            "keywords": [
+                "file",
+                "flintstone",
+                "key",
+                "key-value",
+                "key-value-file",
+                "nosql",
+                "store",
+                "value"
+            ],
+            "time": "2014-10-20 17:36:08"
+        },
+        {
+            "name": "fire015/flintstone",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fire015/flintstone.git",
+                "reference": "3b4add7f143c1cededd6347d7dcf5519f2354e0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fire015/flintstone/zipball/3b4add7f143c1cededd6347d7dcf5519f2354e0a",
+                "reference": "3b4add7f143c1cededd6347d7dcf5519f2354e0a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Flintstone": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason M",
+                    "email": "emailfire@gmail.com"
+                }
+            ],
+            "description": "A key/value database store using flat files for PHP",
+            "homepage": "http://www.xeweb.net/flintstone/",
+            "keywords": [
+                "cache",
+                "database",
+                "files",
+                "flintstone",
+                "memory"
+            ],
+            "time": "2014-09-30 08:31:08"
+        },
+        {
+            "name": "guzzlehttp/guzzle",
+            "version": "4.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "66fd916e9f9130bc22c51450476823391cb2f67c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/66fd916e9f9130bc22c51450476823391cb2f67c",
+                "reference": "66fd916e9f9130bc22c51450476823391cb2f67c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/streams": "~2.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "~4.0",
+                "psr/log": "~1.0"
+            },
+            "suggest": {
+                "ext-curl": "Guzzle will use specific adapters if cURL is present"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2014-10-05 19:29:14"
+        },
+        {
+            "name": "guzzlehttp/streams",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/streams.git",
+                "reference": "f91b721d73f0e561410903b3b3c90a5d0e40b534"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/streams/zipball/f91b721d73f0e561410903b3b3c90a5d0e40b534",
+                "reference": "f91b721d73f0e561410903b3b3c90a5d0e40b534",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Stream\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Provides a simple abstraction over streams of data (Guzzle 4+)",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "Guzzle",
+                "stream"
+            ],
+            "time": "2014-08-17 21:15:53"
+        },
+        {
+            "name": "pimkaptein/box-sdk",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pimkaptein/box-php-sdk.git",
+                "reference": "a02e52d93ec651d317fd5432bc7fd10ba2c36ba3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pimkaptein/box-php-sdk/zipball/a02e52d93ec651d317fd5432bc7fd10ba2c36ba3",
+                "reference": "a02e52d93ec651d317fd5432bc7fd10ba2c36ba3",
+                "shasum": ""
+            },
+            "require": {
+                "adammbalogh/key-value-store": "~0.5.1",
+                "guzzlehttp/guzzle": "~4.2.2",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "~2.1",
+                "phpunit/phpunit": "~4.2.5",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AdammBalogh\\Box\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pim Kaptein",
+                    "email": "p.kaptein@itmundi.nl",
+                    "homepage": "http://www.itmundi.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Box content / view sdk with added functions",
+            "keywords": [
+                "box",
+                "box.com",
+                "sdk"
+            ],
+            "time": "2015-02-09 10:55:27"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "pimkaptein/box-sdk": 20
+    },
+    "prefer-stable": false,
+    "platform": [],
+    "platform-dev": []
+}

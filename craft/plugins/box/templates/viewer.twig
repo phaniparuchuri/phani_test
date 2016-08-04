@@ -1,0 +1,8 @@
+{% extends "_layouts/cp" %}
+{% set title = "Document viewer" %}
+
+{% block content %}
+
+	<iframe src="{{ craft.box.createSession(boxId).urls.view }}" width="550" height="700"></iframe>
+
+{% endblock %}

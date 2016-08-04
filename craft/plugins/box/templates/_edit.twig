@@ -1,0 +1,32 @@
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% block content %}
+	<form id="boxFile-form" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+		<input type="hidden" name="action" value="box/saveboxFile">
+		<input type="hidden" name="redirect" value="box">
+		<input type="hidden" name="fileTypeId" value="{{ fileType.id }}">
+		<input type="hidden" name="boxId" value="{{ element.boxId }}">
+		{% if element.id %}<input type="hidden" name="boxFileId" value="{{ element.id }}">{% endif %}
+		{% if craft.isLocalized() %}<input type="hidden" name="locale" value="{{ element.locale }}">{% endif %}
+
+		{% include 'box/_edit_fields' %}
+
+		{% if element.boxId %}
+
+			<br />
+
+			<a href="{{ cpUrl('/box/viewer/document-' ~ element.boxId) }}" target="_blank" class="btn big livepreviewbtn" style="max-width:200px">
+				{{ "Preview"|t }}
+				<span class="spinner hidden"></span>
+			</a>
+
+		{% endif %}
+
+		<div class="buttons">
+			<div class="btngroup submit">
+				<input type="submit" class="btn submit" value="{{ 'Save'|t }}">
+			</div>
+		</div>
+	</form>
+{% endblock %}

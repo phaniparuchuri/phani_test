@@ -1,0 +1,69 @@
+{% set fileType = element.fileType %}
+{% set fileTypeHandle = fileType.handle %}
+
+{{ forms.textField({
+	label: "Title"|t,
+	id: 'title',
+	name: 'title',
+	value: element.title,
+	errors: element.getErrors('title'),
+	first: true,
+	autofocus: true,
+	required: true
+}) }}
+
+<div>
+	{% for tab in fileType.getFieldLayout().getTabs() %}
+		<div id="tab{{ loop.index }}"{% if not loop.first %} class="hidden"{% endif %}>
+			{% include "_includes/fields" with {
+				fields: tab.getFields(),
+				element: element
+			} only %}
+		</div>
+	{% endfor %}
+</div>
+
+{% if hud is defined %}
+	<br />
+	<a href="{{ element.cpEditUrl }}" class="btn submit" target="_blank" data-icon="share">Edit file</a>
+{% else %}
+	<hr />
+
+	<p>
+		<h2>{{ "Upload a new version:" | translate }}</h2>
+		<input type="file" name="new_version" />
+	</p>
+{% endif %}
+
+<hr />
+
+{% if craft.box.fileVersions(element.boxId).total_count > 0 %}
+	<h2>{{ "File versions"|t }}</h2>
+	<p>
+		{% for entry in craft.box.fileVersions(element.boxId).entries %}
+		<strong> {{ "Previous version:"|t }} </strong> <a href="{{ actionUrl('box/downloadOlderVerion', {fileId: element.boxId, versionId: entry.id}) }}">{{entry.name}}</a> <br/>
+		{% endfor %}
+	</p>	
+	<hr/>
+{% endif %}
+
+<h2>{{ "Document info:" | translate }}</h2>
+{% if element.dateUpdated %}
+<p>
+	<strong>{{ "Last edit" | translate }}:</strong> {{ element.dateUpdated | date('Y-m-d H:i:s') }}
+</p>
+{% endif %}
+
+{% if element.dateCreated %}
+<p>
+	<strong>{{ "Upload date" | translate }}:</strong> {{ element.dateCreated | date('Y-m-d H:i:s') }}
+</p>
+{% endif %}
+
+{% if element.boxId %}
+
+	<p>
+		<strong>{{ "File size" | translate }}:</strong> {{ craft.box.fileInfo(element.boxId).size | filesize }}
+	</p>
+
+{% endif %}

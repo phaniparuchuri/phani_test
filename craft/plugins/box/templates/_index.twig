@@ -1,0 +1,27 @@
+{% extends "_layouts/elementindex" %}
+{% set title = "Box files"|t %}
+{% set elementType = 'Box_File' %}
+
+{% set tabs = {
+	boxFiles:    { label: "Files"|t, url: url('box') },
+	fileTypes: { label: "File types"|t, url: url('box/filetypes') }
+} %}
+
+
+{% block sidebar %}
+	{% if file_types|length %}
+		<div class="buttons">
+			{% if file_types|length > 1 %}
+				<div class="menu">
+					<ul>
+						{% for fileType in file_types %}
+							<li><a href="{{ url('box/'~fileType.handle~'/new') }}">{{ fileType.name|t }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% endif %}
+		</div>
+	{% endif %}
+
+	{{ parent() }}
+{% endblock %}

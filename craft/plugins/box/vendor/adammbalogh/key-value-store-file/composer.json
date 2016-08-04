@@ -1,0 +1,32 @@
+{
+    "name": "adammbalogh/key-value-store-file",
+    "description": "Key-value file store through fire015/flintstone package.",
+    "keywords": ["key", "value", "key-value", "store", "nosql", "file", "key-value-file", "flintstone"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Adam Balogh",
+            "email": "baloghbh@gmail.com",
+            "homepage": "http://code-chronicle.blogspot.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "adammbalogh/key-value-store": "~0.5.1",
+        "fire015/flintstone": "~1.6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.2.5",
+        "mikey179/vfsStream": "~1.4",
+        "satooshi/php-coveralls": "dev-master",
+        "squizlabs/php_codesniffer": "~1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "AdammBalogh\\KeyValueStore\\": "src"
+        }
+    },
+    "minimum-stability": "stable"
+}

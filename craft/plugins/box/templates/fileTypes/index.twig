@@ -1,0 +1,56 @@
+{% extends "_layouts/cp" %}
+{% set title = "Box file types"|t %}
+
+{% if not currentUser.admin %}
+	{% exit 403 %}
+{% endif %}
+
+{% set tabs = {
+	boxFiles:    { label: "Files"|t, url: url('box') },
+	fileTypes: { label: "File types"|t, url: url('box/filetypes') }
+} %}
+
+{% set selectedTab = 'fileTypes' %}
+
+
+{% set content %}
+
+	<div id="nofileTypes"{% if file_types %} class="hidden"{% endif %}>
+		<p>{{ "No file types exist yet."|t }}</p>
+	</div>
+
+	{% if file_types|length %}
+		<table id="fileTypes" class="data fullwidth collapsible">
+			<thead>
+				<th scope="col">{{ "Name"|t }}</th>
+				<th scope="col">{{ "Handle"|t }}</th>
+				<td class="thin"></td>
+			</thead>
+			<tbody>
+				{% for fileType in file_types %}
+					<tr data-id="{{ fileType.id }}" data-name="{{ fileType.name|t }}">
+						<th scope="row" data-title="{{ 'Name'|t }}"><a href="{{ url('box/filetypes/' ~ fileType.id) }}">{{ fileType.name|t }}</a></th>
+						<td data-title="{{ 'Handle'|t }}"><code>{{ fileType.handle }}</code></td>
+						<td class="thin"><a class="delete icon" title="{{ 'Delete'|t }}" role="button"></a></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+
+	<div id="newfileTypecontainer" class="buttons">
+		<a href="{{ url('box/filetypes/new') }}" class="btn submit add icon">{{ "New file type"|t }}</a>
+	</div>
+{% endset %}
+
+
+{% set js %}
+	var adminTable = new Craft.AdminTable({
+		tableSelector: '#fileTypes',
+		noObjectsSelector: '#nofileTypes',
+		newObjectBtnSelector: '#newfileTypecontainer',
+		deleteAction: 'box/filetypes/deletefileType',
+		confirmDeleteMessage: '{{ "Are you sure you want to delete “{name}” and all its boxFiles?"|t }}'
+	});
+{% endset %}
+{% includeJs js %}
