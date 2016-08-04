@@ -1,5 +1,5 @@
 <?php
-
+// Added comment for testing
 // Path to your craft/ folder
 $craftPath = '../craft';
 
