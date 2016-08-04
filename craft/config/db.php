@@ -19,7 +19,7 @@ return array(
 	'user' => 'root',
 
 	// The database password to connect with.
-	'password' => '',
+	'password' => 'phaniparuchuri',
 
 	// The prefix to use when naming tables. This can be no more than 5 characters.
 	'tablePrefix' => 'craft',
