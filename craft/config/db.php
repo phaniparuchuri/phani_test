@@ -10,7 +10,7 @@
 return array(
 
 	// The database server name or IP address. Usually this is 'localhost' or '127.0.0.1'.
-	'server' => 'localhost',
+	'server' => 'localhost:8080',
 
 	// The name of the database to select.
 	'database' => 'testing',
