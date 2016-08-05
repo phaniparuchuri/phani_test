@@ -8,5 +8,6 @@
  */
 
 return array(
-'name' => 'phani kumar testing'
+'name' => 'phani kumar testing',
+    'title' => 'testing'
 );
